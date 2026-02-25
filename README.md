@@ -25,10 +25,10 @@ To meet the project requirements, the following shell scripting concepts were ut
 ├── Transaction.sh          # Main Shell Script
 ├── README.md               # Project Documentation
 ├── Screenshots/            # Folder containing output captures
-└── Demo_Video.mp4          # Screen recording of the execution flow
+└── Transaction.sh - ATM_Project - Visual Studio Code 2026-02-25 22-16-11  # Screen recording of the execution flow
 
 How to Run the Project
-Open your terminal (Linux, macOS, or Git Bash).
+Open your terminal (Linux, macOS, or Git Bash). 
 Grant execution permissions:
 bash
 chmod +x Transaction.sh
@@ -39,5 +39,3 @@ bash
 
 3.  **Save the file.**
 4.  In VS Code, you can click the **"Open Preview to the Side"** button (looks like a page with a magnifying glass in the top right) to see how beautiful it will look on GitHub!
-
-Do you have your **Screenshots** and **Demo Video** ready to put into the folder before you upload it?
