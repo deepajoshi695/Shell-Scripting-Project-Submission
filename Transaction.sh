@@ -63,6 +63,13 @@ Customer_Details() {
         # shellcheck disable=SC2034
         # 4. Account Type & Deposit
         read -p "Enter the Account Type as Savings or Current:" acc_type
+        # ADDED CONDITION: Validate Account Type
+        if [[ "$acc_type" != "Savings" && "$acc_type" != "Current" ]]; then
+            echo "InValid Account Type"
+            echo "Account Creation Process Failed. Restarting Again......."
+            echo "------------------------------------------------"
+            continue # Triggers the while loop to restart from the beginning
+        fi
         read -p "Enter the Deposit Amount: Rs." deposit_input
         # CONDITION: Check if input contains ONLY numbers
         if [[ ! "$deposit_input" =~ ^[0-9]+$ ]]; then
