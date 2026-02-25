@@ -15,7 +15,7 @@ Customer_Details() {
         read -p "Enter the FullName in Bold Letters:" cust_name
         cust_name=${cust_name^^} # String Manipulation: Convert to Bold/Uppercase
         
-        # 2. ID Type Selection (Matches image failure for "P" or "Lice")
+        # 2. ID Type Selection
         read -p "Enter the ID Proof Type [Ex: Aadhar, Pan, License, etc..]:" id_type
         
         if [[ "$id_type" != "Aadhar" && "$id_type" != "Pan" && "$id_type" != "License" ]]; then
@@ -97,7 +97,7 @@ Customer_Choice() {
         echo "------------------------------------------------"
         read -p "Do you want to Apply for ATM Card: Type Yes or No: " apply_choice
         
-        # Exact matching from image (Yes/No/yes/no)
+        # Exact matching (Yes/No/yes/no)
         if [[ "${apply_choice,,}" == "no" ]]; then
             echo "No"
             echo "Thanks for Being a Valuable Customer to Us"
@@ -108,7 +108,7 @@ Customer_Choice() {
             echo "Your Temporary ATM Pin Number is: 12345"
             break # Move to ATM Access prompt
         else
-            # Handling "YeNo" or wrong choice case from your image
+            # Handling "YeNo" or wrong choice case
             echo "$apply_choice"
             echo "ATM Card Process Failed. Restarting the Card Process Again......"
             continue
@@ -130,7 +130,7 @@ Customer_Choice() {
 }
 
 ATM_Process() {
-    # If the requirement says "Restarting", use a loop
+    # If the requirement says "Restarting", using a loop
     while true; do
         read -p "Enter the Pin Number: " input_pin
         
@@ -146,10 +146,10 @@ ATM_Process() {
                 Credit_Process
                 break # Exit loop on success
             else
-                # To match screenshot perfectly but keep script alive:
+                
                 echo "Invalid Choice"
                 echo "------------------------------------------------"
-                # If you want it to EXIT like the picture, use 'exit 1' here instead of 'continue'
+                
                 continue 
             fi
         else
@@ -161,7 +161,7 @@ ATM_Process() {
 
 # 4. Function for Cash Withdrawal (Debit)
 Debit_Process() {
-    # Infinite loop to match image behavior: keep asking until success
+    # Infinite loop: keep asking until success
     while true; do
         read -p "Enter the Amount to Withdraw: Rs." withdraw_amt
 
@@ -180,7 +180,7 @@ Debit_Process() {
             continue 
         fi
 
-        # Success Case (matches green arrows in your image)
+        # Success Case 
         BALANCE=$((BALANCE - withdraw_amt))
         echo "Your Current Available Balance After Deduction is Rs.$BALANCE"
         
@@ -193,12 +193,12 @@ Debit_Process() {
 
 # 5. Function for Cash Deposit (Credit_Process)
 Credit_Process() {
-    # Infinite loop to match image behavior: keep asking until success
+    # Infinite loop: keep asking until success
     while true; do
-        # Prompt exactly as shown in the image
+        
         read -p "Enter the Amount to Deposit Rs." deposit_amt
         
-        # Denomination Validation (Image shows failures for 20, 40, 90, 145, 180, 135, 555, 980, 950, 920, 620)
+        # Denomination Validation
         # Only 500 is accepted in the example.
         if (( deposit_amt % 500 != 0 )); then
             echo "Enter the Valid Amount"
@@ -208,7 +208,7 @@ Credit_Process() {
         # Success Case - Logic for updating balance
         BALANCE=$((BALANCE + deposit_amt))
         
-        # Success messages matching the green arrows in the image
+        # Success messages
         echo "Your Amount Deposited Successfully !!"
         echo "Your Current Available Balance is Rs.$BALANCE"
         
