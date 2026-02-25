@@ -38,4 +38,3 @@ bash
 ./Transaction.sh
 
 3.  **Save the file.**
-4.  In VS Code, you can click the **"Open Preview to the Side"** button (looks like a page with a magnifying glass in the top right) to see how beautiful it will look on GitHub!
