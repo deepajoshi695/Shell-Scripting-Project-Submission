@@ -24,7 +24,7 @@ To meet the project requirements, the following shell scripting concepts were ut
 .
 ├── Transaction.sh          # Main Shell Script
 ├── README.md               # Project Documentation
-├── Screenshots/            # Folder containing output captures
+├── Shell scripting SS            # Folder containing output captures
 └── Transaction.sh - ATM_Project - Visual Studio Code 2026-02-25 22-16-11  # Screen recording of the execution flow
 
 How to Run the Project
